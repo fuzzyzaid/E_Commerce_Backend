@@ -13,7 +13,6 @@ const loginController = async (req, res) => {
     if (!user) {
       return res.json({ message: "User not found" });
     }
-
     const passwordMatch = await bcrypt.compare(
       userCredentials.password,
       user.password

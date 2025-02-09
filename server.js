@@ -23,6 +23,7 @@ app.use("*", (req, res, next) => {
 //Controllers
 const signupController = require("./controllers/signupController.js");
 const loginController = require("./controllers/loginController.js");
+const logoutController = require("./controllers/logoutController.js");
 
 //Port Details
 const port = process.env.PORT || 4000;
@@ -33,3 +34,4 @@ app.listen(port, () => {
 // Routes
 app.post("/signup", signupController);
 app.post("/login", loginController);
+app.get("/logout", logoutController);
