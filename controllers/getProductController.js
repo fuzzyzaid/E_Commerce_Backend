@@ -1,14 +1,15 @@
 const productModel=require("../models/productModel");
 
-const productController = async (req, res) => {
+const getProductController = async (req, res) => {
 
     try {
         const products = await productModel.find();
         res.json(products);
+        console.log(products);
       } catch (error) {
         res.status(500).json({ message: "Error fetching products" });
       }
     
 }
 
-module.exports = productController;
+module.exports = getProductController;

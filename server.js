@@ -24,7 +24,8 @@ app.use("*", (req, res, next) => {
 const signupController = require("./controllers/signupController.js");
 const loginController = require("./controllers/loginController.js");
 const logoutController = require("./controllers/logoutController.js");
-const productController = require("./controllers/productController.js");
+const getProductController = require("./controllers/getProductController.js");
+const addProductController = require("./controllers/addProductController.js");
 
 //Port Details
 const port = process.env.PORT || 4000;
@@ -36,4 +37,5 @@ app.listen(port, () => {
 app.post("/signup", signupController);
 app.post("/login", loginController);
 app.get("/logout", logoutController);
-app.get("/products", productController);
+app.get("/getProducts", getProductController);
+app.post("/addProducts", addProductController);
